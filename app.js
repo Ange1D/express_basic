@@ -16,6 +16,20 @@ app.get('/launchx', (req, res) => {
     res.send('Bievenidos a launchx')
 })
 
+// Regresando un objeto
+// localhost:3000/explorersInNode
+app.get('/explorersInNode', (req, res) => {
+    const explorer = {name: "Explorer", msg: "Hello"}
+    res.send(explorer)
+  })
+
+// Query Params: Recibir parámetros por la url
+// http://localhost:3000/explorers/ange1d
+// req.params = {"explorerName":"ange1d"}
+app.get('/explorers/:explorerName', (req, res) => {
+    res.send(req.params)
+})
+
 // Con esto inicializamos esta app
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
